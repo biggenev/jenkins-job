@@ -1,20 +1,24 @@
-#!groovy
-prorerties([disableConcurrentBuilds()])
-
 pipeline {
-   agent  {
-           label  'master'
-		   }
-   options {
+    agent any
+    options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
 		timestamps()
 		}
     stages {
-	    stage("First step") {
-		    steps {
-			   echo 'Hello world'
-			      }
-			                }
-		   }
-	     }
-			   
+        stage('First-Pipeline') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Test-Pipeline') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Deploy-Pipeline') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
