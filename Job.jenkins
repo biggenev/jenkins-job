@@ -12,7 +12,7 @@ pipeline {
     stages {
 	    stage("First step") {
 		    steps {
-			   sh 'ssh root@localhost \'hostname\''
+			   echo 'Hello world'
 			      }
 			                }
 		   }
